@@ -252,6 +252,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    document.getElementById("reset").onclick = () => location.reload();
+    const overlay = document.querySelector("#overlay");
+    const confirmYesButton = document.getElementById("confirmYes");
+    const confirmNoButton = document.getElementById("confirmNo");
+    const resetButton = document.getElementById("reset");
+    
+    function unHideOverlay() {
+        overlay.style.display = "flex";
+        handleUserChoice();
+    }
+    
+    resetButton.onclick = unHideOverlay;
+    
+    function handleUserChoice() {
+        confirmYesButton.addEventListener("click", function() {
+            overlay.style.display = "none";
+            location.reload();
+        });
+    
+        confirmNoButton.addEventListener("click", function() {
+            overlay.style.display = "none"; // Hide overlay if No is clicked
+        });
+    }
+
   });
   
