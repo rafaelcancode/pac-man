@@ -1,3 +1,7 @@
+* {
+  font-family: monospace;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -63,5 +67,13 @@ body {
   
   .scared-ghost {
     background-color: aquamarine;
+  }
+
+  button {
+    padding: 5px;
+    font-family: monospace;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
   }
   

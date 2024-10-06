@@ -175,13 +175,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
   
     // prettier-ignore
-    ghosts.forEach(ghost => {
-        squares[ghost.currentIndex].classList.add(ghost.className)
-        squares[ghost.currentIndex].classList.add("ghost")
-    })
+    ghosts.forEach(ghost => 
+        squares[ghost.currentIndex].classList.add(ghost.className, "ghost"))
+        
+    
   
     //move ghosts randomly
-    ghosts.forEach((ghost) => moveGhost(ghost));
+    ghosts.forEach(ghost => moveGhost(ghost));
   
     function moveGhost(ghost) {
       const directions = [-1, 1, width, -width];
@@ -250,5 +250,8 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(function() {alert("You have WON!")} , 500)
       }
     }
+
+
+    document.getElementById("reset").onclick = () => location.reload();
   });
   
